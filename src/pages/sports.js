@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import News from "./news";
 
 function sports() {
-  return (
-    <div>sports</div>
-  )
+  return <News category="Sport" />;
 }
 
-export default sports
+export default sports;

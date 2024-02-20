@@ -4,6 +4,7 @@ export default function Home() {
       <h1>Chas News</h1>
       <p>News WebSite</p>
       <p>News WebSite</p>
+      <p>News WebSite</p>
     </main>
   );
 }

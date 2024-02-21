@@ -1,5 +1,5 @@
 import React from "react";
-import News from "./news";
+import News from "./News";
 
 function sports() {
   return <News category="Sport" />;

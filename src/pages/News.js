@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const DIN_API_NYCKEL = "pub_38646ff2d815974475c05b2e587f0003b510f";
+const DIN_API_NYCKEL = "";
 
 export async function getPizzaArticles() {
   const res = await fetch(
@@ -24,7 +24,7 @@ export default function News() {
   }, [setArticles]);
 
   return (
-    <div className="">
+    <div>
       <ul className="list-none m-0">
         {articles.map((article) => (
           <li

@@ -1,8 +1,8 @@
-//import { useRouter } from "next/router";
+import { useRouter } from "next/router";
 //import { useEffect, useState } from "react";
 import Link from "next/link";
 
-const DIN_API_NYCKEL = "";
+const DIN_API_NYCKEL = process.env.NEXT_PUBLIC_API_KEY;
 
 export async function getStaticPaths() {
   const res = await fetch(
@@ -36,7 +36,12 @@ export async function getStaticProps({ params }) {
   };
 }
 
+
+
+
 export default function Article({ article }) {
+  const router = useRouter();
+  const { category } = router.query;
   if (!article) {
     return (
       <>
@@ -53,6 +58,20 @@ export default function Article({ article }) {
       <div className="ml-6">
         <h2 className="text-xl">{article.title}</h2>
         <img src={article.image_url} alt={article.title} />
+        <Link href={category ? `/${category.toLowerCase()}` : '/'}>
+          <p>Back to {category}</p>
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+  /*Main kod
+  return (
+    <div className="w-full flex flex-col h-auto py-6">
+      <div className="ml-6">
+        <h2 className="text-xl">{article.title}</h2>
+        <img src={article.image_url} alt={article.title} />
         <Link href="/News">
           <p>Back home</p>
         </Link>
@@ -60,7 +79,7 @@ export default function Article({ article }) {
     </div>
   );
 }
-
+*/
 
 /*
 export default function Article() {

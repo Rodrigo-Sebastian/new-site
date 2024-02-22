@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const DIN_API_NYCKEL = process.env.NEXT_PUBLIC_API_KEY;
+const DIN_API_NYCKEL = "pub_38240d6d8069b34a52954aac12b5d340fb55e";
 
 export async function getNewsByCategory(category) {
   const res = await fetch(
@@ -34,19 +34,15 @@ export default function News({ category }) {
               className="p-4 gap-2 flex flex-col flex-wrap items-center mb-3 border border-solid rounded-md max-w-[300px] h-[300px] shadow-lg shadow-blue-500/50 border-slate-100"
             >
               <Link href={`/article/${article.article_id}`}>
-                  <h2 className="text-[16px]">{article.title}</h2>
+                <h2 className="text-[16px]">{article.title}</h2>
               </Link>
-              <img
-                src={article.image_url}
-                className=""
-              />
+              <img src={article.image_url} className="" />
             </li>
           ))}
       </ul>
     </div>
   );
 }
-
 
 /*
 import Link from "next/link";

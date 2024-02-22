@@ -1,27 +1,23 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import Layout from "../componenets/Layout";
+import Layout from "../../componenets/Layout";
 
-const API_NYCKEL = "";
+const API_NYCKEL = "pub_38240d6d8069b34a52954aac12b5d340fb55e";
 
 export default function Article() {
   const [article, setArticle] = useState(null);
   const [otherArticles, setOtherArticles] = useState([]);
 
   const router = useRouter();
-  const { id } = router.query;
+  const { id, category } = router.query;
 
   useEffect(() => {
-    console.log("Article ID:", id);
-    fetch(`https://newsdata.io/api/1/news?apikey=${API_NYCKEL}&q=pizza`)
+    fetch(`https://newsdata.io/api/1/news?apikey=${API_NYCKEL}&q=${category}`)
       .then((res) => res.json())
       .then((data) => {
         const allArticles = data.results;
-        console.log("allArticles in id:", allArticles);
-
         const article = allArticles.find((article) => article.article_id == id);
-        console.log("article id id", article);
         setArticle(article);
         const remainingArticles = allArticles.filter(
           (a) => a.article_id !== article.article_id
@@ -60,7 +56,9 @@ export default function Article() {
               max-w-full 
               "
               >
-                <Link href={`/article/${art.article_id}`}>{art.title}</Link>
+                <Link href={`/article/${category}/${article.article_id}`}>
+                  {art.title}
+                </Link>
                 <img src={art.image_url} alt="" />
               </div>
             ))}

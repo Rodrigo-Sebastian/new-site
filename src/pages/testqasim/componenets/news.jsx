@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-const API_NYCKEL = "pub_38240d6d8069b34a52954aac12b5d340fb55e";
+const API_NYCKEL = "";
 
 export default function News({ category }) {
   const [articles, setArticles] = useState([]);

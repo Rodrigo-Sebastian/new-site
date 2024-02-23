@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function Footer() {
   return (
-    <footer className=" py-4 bg-[#6EC4E4] w-full">
+    <footer className=" py-4 bg-gray-600 text-white w-full">
       <div className="ml-6 mr-6 leading-5 sm:items-center justify-between flex flex-col sm:flex-row gap-6 text-[16px]">
         <div className="flex flex-col items-center justify-between gap-3 lg:flex-row">
           <b>Leave news tips:</b>

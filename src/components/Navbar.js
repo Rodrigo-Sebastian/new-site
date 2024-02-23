@@ -21,15 +21,11 @@ function Navbar() {
             </Link>
           </li>
           <li className="">
-            <Link href="/technology" className="navLinks">
-            Technology
+            <Link href="/business" className="navLinks">
+           Business
             </Link>
           </li>
-          <li className="">
-            <Link href="/health" className="navLinks">
-            Health
-            </Link>
-          </li>
+      
         </ul>
       </nav>
     </header>

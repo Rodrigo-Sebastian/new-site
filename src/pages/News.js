@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const DIN_API_NYCKEL = "pub_38240d6d8069b34a52954aac12b5d340fb55e";
+const DIN_API_NYCKEL = "";
 
 export async function getNewsByCategory(category) {
   const res = await fetch(

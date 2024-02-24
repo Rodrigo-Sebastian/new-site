@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { FaRegBookmark } from "react-icons/fa6";
+import SearchBar from "./SearchBar";
 
 function Navbar() {
   return (
@@ -36,6 +37,9 @@ function Navbar() {
           </li>
         </ul>
       </nav>
+      <div>
+        <SearchBar />
+      </div>
     </header>
   );
 }

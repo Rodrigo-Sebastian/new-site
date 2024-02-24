@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Layout from "@/components/Layout";
 
-const API_NYCKEL = "pub_38646ff2d815974475c05b2e587f0003b510f";
+const API_NYCKEL = "pub_3821772cf23413ebd45516be40a42648a3bac";
 
 export default function Article() {
   const [article, setArticle] = useState(null);
@@ -28,7 +28,7 @@ export default function Article() {
 
   return (
     <Layout>
-      <div className="flex mt-4">
+      <div className="flex">
         <div className="w-2/3 pr-4">
           {article && (
             <div
@@ -40,6 +40,8 @@ export default function Article() {
             >
               <h2>{article.title}</h2>
               <img src={article.image_url} alt="" />
+              <p>{article.description}</p>
+
             </div>
           )}
         </div>

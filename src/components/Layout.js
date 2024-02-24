@@ -17,7 +17,8 @@ export default function Layout({ children }) {
           </Link>
         </div>
   </nav> */}
-      <div className="container mx-auto mt-4">{children}</div>
+      <div className="container justify-between mx-auto py-2 my-4 sm:my-6 w-full xl:max-w-[80%] 2xl:max-w-[50%]">
+        {children}</div>
     </div>
   );
 }

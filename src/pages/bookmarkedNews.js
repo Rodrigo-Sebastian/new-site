@@ -7,11 +7,11 @@ function bookmarkedNews() {
 
   useEffect(() => {
     const savedArticlesFromStorage = localStorage.getItem("savedArticles");
-    console.log("Saved articles:", savedArticlesFromStorage);
+   // console.log("Saved articles:", savedArticlesFromStorage);
     if (savedArticlesFromStorage !== null) {
       try {
         const parsedArticles = JSON.parse(savedArticlesFromStorage);
-        console.log("Articles:", parsedArticles);
+       // console.log("Articles:", parsedArticles);
         setSavedArticles(parsedArticles);
       } catch (error) {
         console.error("Error saving articles:", error);

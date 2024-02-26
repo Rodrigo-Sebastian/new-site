@@ -2,10 +2,11 @@ import React, { useEffect } from "react";
 //import Image from "next/image"
 
 function BookmarkedArticles({ savedArticles, onDeleteArticle }) {
+    {/**
   useEffect(() => {
     console.log("Saved articles have changed:", savedArticles);
   }, [savedArticles]); 
-
+ */}
   const deleteArticle = (articleId) => {
     onDeleteArticle(articleId);
   };

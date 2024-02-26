@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 //import { useEffect, useState } from "react";
 import Link from "next/link";
 
-const DIN_API_NYCKEL = "pub_38240d6d8069b34a52954aac12b5d340fb55e";
+const DIN_API_NYCKEL = "";
 
 export async function getStaticPaths() {
   const res = await fetch(

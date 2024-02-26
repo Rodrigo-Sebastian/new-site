@@ -17,6 +17,10 @@ img {
     @apply no-underline uppercase text-white tracking-wider font-medium hover:underline
   }
 
+  input {
+    @apply border border-slate-200 px-2
+  }
+
   h1, h2, h3 {
     @apply font-bold
   }

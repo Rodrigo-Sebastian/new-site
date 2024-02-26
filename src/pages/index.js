@@ -9,7 +9,7 @@ export default function Home() {
       <Layout>
         <div className="w-full flex flex-row ">
           <main className="sm:w-[70%] px-2 sm:pl-6 xl:pl-0 sm:pr-3">
-            <News category="pizza" />
+            <News category="world" />
           </main>
           <div className="hidden sm:w-[30%] sm:flex px-2 sm:pr-6 xl:pr-0 sm:pl-3 ">
             <Aside />

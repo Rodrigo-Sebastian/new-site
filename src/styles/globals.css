@@ -14,7 +14,7 @@ img {
 
 @layer base {
   .navLinks {
-    @apply no-underline uppercase text-white tracking-wider font-medium
+    @apply no-underline uppercase text-white tracking-wider font-medium hover:underline
   }
 
   h1, h2, h3 {

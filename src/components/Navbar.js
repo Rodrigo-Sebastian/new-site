@@ -12,7 +12,10 @@ function Navbar() {
             Chas News
           </h2>
         </Link>
-        <div className="py-2 mx-2 ">
+        <div className="py-2 mx-2 flex flex-row ">
+        <div className="pr-6">
+            <SearchBar />
+          </div>
           <Link href="/bookmarkedNews">
             <FaRegBookmark size={20} />
           </Link>
@@ -37,9 +40,6 @@ function Navbar() {
           </li>
         </ul>
       </nav>
-      <div>
-        <SearchBar />
-      </div>
     </header>
   );
 }

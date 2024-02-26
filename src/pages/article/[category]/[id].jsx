@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Layout from "@/components/Layout";
 
-const API_NYCKEL = "pub_38646ff2d815974475c05b2e587f0003b510f";
+const API_NYCKEL = "pub_386086436841a8f896b96c68f9acd319c6c12";
 
 export default function Article() {
   const [article, setArticle] = useState(null);
@@ -28,8 +28,8 @@ export default function Article() {
 
   return (
     <Layout>
-      <div className="flex">
-        <div className="w-2/3 pr-4">
+      <div className="flex flex-col">
+        <div className=" w-full justify-center mx-auto py-4">
           {article && (
             <div
               className="bg-white
@@ -38,16 +38,15 @@ export default function Article() {
               shadow-xl
               max-w-full"
             >
-              <h2>{article.title}</h2>
+              <h2 className=" pb-4 text-center">{article.title}</h2>
               <img src={article.image_url} alt="" />
-              <p>{article.description}</p>
-
+              <p className=" pt-4 ">{article.description}</p>
             </div>
           )}
         </div>
         <div>
           <h3>Other News</h3>
-          <ul className="grid grid-cols-1 gap-4">
+          <ul className="grid grid-cols-3 gap-4">
             {(otherArticles || []).map((art) => (
               <div
                 key={art.article_id}
@@ -70,127 +69,3 @@ export default function Article() {
     </Layout>
   );
 }
-
-
-/*
-export async function getStaticPaths() {
-  const res = await fetch(
-    `https://newsdata.io/api/1/news?apikey=${DIN_API_NYCKEL}&category=sports`
-  );
-  const data = await res.json();
-
-  const articles = data.results;
-
-  const paths = articles.map((article) => ({
-    params: { id: article.article_id.toString() },
-  }));
-
-  return { paths, fallback: false };
-}
-
-export async function getStaticProps({ params }) {
-  const res = await fetch(
-    `https://newsdata.io/api/1/news?apikey=${DIN_API_NYCKEL}&category=sports`
-  );
-  const data = await res.json();
-
-  const articles = data.results;
-
-  const article = articles.find((article) => article.article_id == params.id);
-
-  return {
-    props: {
-      article,
-    },
-  };
-}
-
-export default function Article({ article }) {
-  const router = useRouter();
-  const { category } = router.query;
-  if (!article) {
-    return (
-      <>
-        <div>Can't find page</div>
-        <Link href="/News" className="bottom-0">
-          <p>Back home</p>
-        </Link>
-      </>
-    );
-  }
-
-  return (
-    <div className="w-full flex flex-col h-auto py-6">
-      <div className="ml-6">
-        <h2 className="text-xl">{article.title}</h2>
-        <img src={article.image_url} alt={article.title} />
-        <Link href={category ? `/${category.toLowerCase()}` : "/"}>
-          <p>Back to {category}</p>
-        </Link>
-      </div>
-    </div>
-  );
-}
-*/
-/*Main kod
-  return (
-    <div className="w-full flex flex-col h-auto py-6">
-      <div className="ml-6">
-        <h2 className="text-xl">{article.title}</h2>
-        <img src={article.image_url} alt={article.title} />
-        <Link href="/News">
-          <p>Back home</p>
-        </Link>
-      </div>
-    </div>
-  );
-}
-*/
-
-/*
-export default function Article() {
-  const [article, setArticle] = useState(null);
-
-  const router = useRouter();
-  const { id } = router.query;
-
-  useEffect(() => {
-    fetch(
-      `https://newsdata.io/api/1/news?apikey=${DIN_API_NYCKEL}&q=${category}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data.results);
-        const allArticles = data.results;
-        const article = allArticles.find((article) => article.article_id == id); //hitta artikeln med artikel_id som överensstämmer med id
-
-        setArticle(article);
-      });
-  }, [id, setArticle]);
-*/
-/**
-   if(article == null){
-    return null
-   }
-   */
-/*
-  console.log("Article props", props);
-*/
-/*
-  return (
-    <div>
-      {article && ( //if article is not null, show:
-        <>
-          <div className="max-w-full flex flex-col min-h-screen">
-            <div className="w-[80%] mx-auto items-center">
-              <h2 className="text-[16px]">{article.title}</h2>
-              <img src={article.image_url} />
-              <Link href={"/news1"}>Back home</Link>
-            </div>
-          </div>
-        </>
-      )}
-    </div>
-  );
-}
-*/

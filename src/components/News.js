@@ -1,8 +1,7 @@
-
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-const API_NYCKEL = "pub_38646ff2d815974475c05b2e587f0003b510f";
+const API_NYCKEL = "pub_386086436841a8f896b96c68f9acd319c6c12";
 
 export default function News({ category }) {
   const [articles, setArticles] = useState([]);
@@ -24,8 +23,8 @@ export default function News({ category }) {
           >
             <Link href={`/article/${category}/${article.article_id}`}>
               <h2>{article.title}</h2>
-            <img src={article.image_url} alt="" />
-            <p>{article.description}</p>
+              <img src={article.image_url} alt="" />
+              <p>{article.description}</p>
             </Link>
           </div>
         ))}
